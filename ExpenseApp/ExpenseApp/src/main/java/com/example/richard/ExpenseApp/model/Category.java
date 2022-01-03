@@ -25,6 +25,6 @@ public class Category {
 	
 	// connection already made between expense and category and user
 //	@ManyToOne(cascade=CascadeType.PERSIST)
-//	private User user;
+//	private User user;a
 //	
 }
