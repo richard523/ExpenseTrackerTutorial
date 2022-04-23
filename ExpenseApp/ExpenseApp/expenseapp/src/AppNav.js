@@ -44,7 +44,7 @@ class AppNav extends React.Component {
           <Collapse navbar>
             <Nav className="ms-auto" navbar>
               <NavItem>
-                <NavLink href="/Home/"><p class = "text-secondary ">Home</p></NavLink>
+                <NavLink href="/"><p class = "text-secondary ">Home</p></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/Categories"><p class = "text-secondary ">Categories</p></NavLink>
