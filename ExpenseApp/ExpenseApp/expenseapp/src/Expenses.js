@@ -25,7 +25,7 @@ class Expenses extends Component {
         expensedate : new Date(),
         id : 104,
         location : '',
-        categories : {id: 1, name: 'Travel'}
+        category : {id: 1, name: 'Travel'}
     }
 
     constructor(props) {
@@ -129,7 +129,7 @@ class Expenses extends Component {
                             <td>{expense.description}</td>
                             <td>{expense.location}</td>
                             <td><Moment date = {expense.expensedate} format ="YYYY/MM/DD"></Moment></td>
-                            {/* <td>{expense.category.name}</td> */}
+                            <td>{expense.category.name}</td>
                             <td><Button size="m" color = "danger" onClick= { () => this.remove(expense.id)}>Delete </Button></td>
 
                         </tr>
