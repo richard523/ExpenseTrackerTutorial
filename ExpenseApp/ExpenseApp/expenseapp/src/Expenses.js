@@ -10,7 +10,16 @@ import Category from './Category';
 
 class Expenses extends Component {
     state = { date : new Date(),
-            isLoading : true, } 
+            isLoading : true,
+            expenses : [],
+            Categories : []
+         } 
+    
+    async componentDidMount() {
+        const response = await fetch('/api/categories');
+        const body = await response.json();
+        this.setState({Categories : body, isLoading : false})
+    }
 
 
     render() { 
@@ -29,28 +38,25 @@ class Expenses extends Component {
         return ( 
             <div>
                 <AppNav/>
-                <h2>Expenses</h2>
+                
                 <Container>
                     {title}
                     <Form onSubmit={this.handleSubmit}>
                         <FormGroup>
-                            <label for="title"><text>Title</text>{"\n"}</label>
+                            <Label for="title"><text>Title</text>{"\n"}</Label>
                             <input type="text" name="title" id="title" 
                                 onChange={this.handleChange} autoComplete="name"/>
                         </FormGroup>
                         <FormGroup>
-                            <label for="category">Category </label>
+                            <Label for="category">Category </Label>
                                 <select>
                                     {optionList}
                                 </select>
-
-
-
                             <input type="text" name="category" id="category" 
                                 onChange={this.handleChange}/>
                         </FormGroup>
                         <FormGroup>
-                            <label for="city">Date </label>
+                            <Label for="city">Date </Label>
                             <DatePicker selected={this.state.date} onChange={this.handleChange}/>
                         </FormGroup>
                         <div className="row">
