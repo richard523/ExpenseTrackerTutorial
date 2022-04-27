@@ -28,7 +28,7 @@ class AppNav extends React.Component {
       <div>
         {/* <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> */}
         <Navbar color="dark" expand="md">
-          <NavbarBrand href="/"><p class = "text-secondary ">Simple Expense Tracker App</p></NavbarBrand>
+          <NavbarBrand href="/"><p className = "text-secondary ">Simple Expense Tracker App</p></NavbarBrand>
           {/*
           <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
@@ -44,13 +44,13 @@ class AppNav extends React.Component {
           <Collapse navbar>
             <Nav className="ms-auto" navbar>
               <NavItem>
-                <NavLink href="/"><p class = "text-secondary ">Home</p></NavLink>
+                <NavLink href="/"><p className = "text-secondary ">Home</p></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/Categories"><p class = "text-secondary ">Categories</p></NavLink>
+                <NavLink href="/Categories"><p className = "text-secondary ">Categories</p></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/Expenses"><p class = "text-secondary ">Expenses</p></NavLink>
+                <NavLink href="/Expenses"><p className = "text-secondary ">Expenses</p></NavLink>
               </NavItem>
             </Nav>
             {/* <NavbarText>
