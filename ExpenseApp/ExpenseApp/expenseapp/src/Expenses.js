@@ -9,10 +9,32 @@ import Category from './Category';
 
 
 class Expenses extends Component {
-    state = { date : new Date(),
+    	
+    // 0	
+    // id	100
+    // expensedate	"2020-05-30T23:38:23.085Z"
+    // description	"Maryland Trip"
+    // location	"Maryland"
+    // category	
+    // id	1
+    // name	"Travel"
+
+    emptyItem = {
+        id : '103',
+        expensedate : new Date(),
+        description : '',
+        location : '',
+        categories : [1, 'Travel']
+    }
+
+
+
+    state = { 
             isLoading : true,
             expenses : [],
-            Categories : []
+            Categories : [],
+            date : new Date(),
+            item : this.emptyItem
          } 
     
     async componentDidMount() {
