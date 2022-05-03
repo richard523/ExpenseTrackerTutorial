@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import AppNav from './AppNav';
 
+class Counter extends React.Component {
+        
+}
+
 class Category extends Component {
     state = { 
         isLoading : true,
@@ -15,6 +19,9 @@ class Category extends Component {
         const body = await response.json();
         this.setState({Categories : body, isLoading : false});
     }
+
+
+
     render() { 
         const {Categories, isLoading} = this.state;
         if(isLoading) 
@@ -24,10 +31,10 @@ class Category extends Component {
         return (
             <div>
                 <AppNav/>
-                <h2>Categories</h2>
+                <h2>Categories (with a counter demo underneath)</h2>
                 {
                     Categories.map( category =>
-                        <div key={category.id}>
+                        <div id={category.id}>
                             {category.name}
                         </div>
                     )

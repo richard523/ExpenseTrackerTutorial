@@ -23,7 +23,7 @@ class Expenses extends Component {
     emptyItem = {
         description : '',
         expensedate : new Date(),
-        id : 104,
+        id : 123,
         location : '',
         category : {id: 1, name: 'Travel'}
     }
@@ -57,8 +57,7 @@ class Expenses extends Component {
                 'Accept' : 'application/json',
                 'Content-Type' : 'application/json'
             },
-
-            body : JSON.stringify(item),
+            body : JSON.stringify({item}),
         }).then(response => response.json());
         console.log(item);
         
@@ -91,7 +90,7 @@ class Expenses extends Component {
                 'Content-Type' : 'application/json'
             }
         }).then(() => {
-            let updatedExpenses = [...this.state.Expenses].filter(i => i.id !== id); // iterate through components in Expenses; make sure i.id 
+            let updatedExpenses = [...this.state.Expenses].filter(i => i.id !== id); // iterate through components in Expenses; make sure i.id does not equal
             this.setState({Expenses : updatedExpenses})
         });
     }
@@ -119,13 +118,13 @@ class Expenses extends Component {
 
         let optionList = 
                 Categories.map(category=>
-                    <option key={category.id}>
+                    <option id={category.id}>
                         {category.name}
                     </option>)
 
         let rows =
                 Expenses.map( expense => 
-                        <tr key={expense.id}>
+                        <tr id={expense.id}>
                             <td>{expense.description}</td>
                             <td>{expense.location}</td>
                             <td><Moment date = {expense.expensedate} format ="YYYY/MM/DD"></Moment></td>
